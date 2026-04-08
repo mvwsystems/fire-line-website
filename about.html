@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Fire Line Services | DFW Underground Utilities</title>
+  <meta name="description" content="Founded in 1992 by Dwayne Walker, Fire Line Services has grown from a fire line specialist into a full-service underground utility subcontractor with 50+ crew members across DFW.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/styles.css">
+  <style>
+    .page-hero {
+      position: relative;
+      padding: 160px 48px 80px;
+      background: var(--black-mid);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 72px;
+      width: 4px;
+      height: 100%;
+      background: var(--red);
+    }
+    .page-hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .page-hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--red);
+    }
+    .page-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 7vw, 100px);
+      line-height: 1;
+      letter-spacing: 0.03em;
+      color: var(--white-pure);
+      max-width: 700px;
+    }
+    .page-hero p {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--gray-light);
+      max-width: 540px;
+      margin-top: 20px;
+      line-height: 1.7;
+    }
+
+    .story-section {
+      padding: 100px 0;
+      background: var(--black);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .story-body {
+      font-size: 17px;
+      font-weight: 300;
+      color: #B0AEAB;
+      line-height: 1.8;
+    }
+    .story-body p + p { margin-top: 20px; }
+    .story-body strong { color: var(--white); font-weight: 600; }
+
+    .story-aside { }
+
+    .stat-block {
+      background: var(--black-light);
+      padding: 36px 32px;
+      border-left: 4px solid var(--red);
+      margin-bottom: 2px;
+    }
+
+    .stat-block-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 56px;
+      line-height: 1;
+      color: var(--white-pure);
+      display: block;
+    }
+
+    .stat-block-num span { color: var(--red); }
+
+    .stat-block-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      margin-top: 4px;
+      display: block;
+    }
+
+    .values-section {
+      padding: 100px 0;
+      background: var(--black-mid);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 56px;
+    }
+
+    .value-card {
+      background: var(--black-light);
+      padding: 40px 32px;
+      border-top: 3px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .value-card:hover { border-top-color: var(--red); }
+
+    .value-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      color: var(--gray-dark);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .value-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white-pure);
+      margin-bottom: 12px;
+    }
+
+    .value-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-light);
+      line-height: 1.7;
+    }
+
+    .licenses-section {
+      padding: 80px 0;
+      background: var(--black);
+      border-top: 1px solid var(--border);
+    }
+
+    .licenses-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+
+    .license-item {
+      background: var(--black-mid);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .license-item:first-child { background: var(--red); }
+
+    .license-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      margin-bottom: 8px;
+    }
+
+    .license-item:first-child .license-title { color: rgba(255,255,255,0.7); }
+
+    .license-value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      color: var(--white-pure);
+      line-height: 1.1;
+    }
+
+    .cta-strip {
+      background: var(--red);
+      padding: 60px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .cta-strip-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      color: white;
+      line-height: 1;
+    }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: white;
+      padding: 16px 36px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      clip-path: polygon(0 0, 100% 0, 100% 70%, 93% 100%, 0 100%);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .btn-white:hover { background: var(--white); transform: translateY(-2px); }
+
+    @media (max-width: 1024px) {
+      .story-grid { grid-template-columns: 1fr; gap: 48px; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .licenses-grid { grid-template-columns: repeat(2, 1fr); }
+      .page-hero { padding: 140px 24px 60px; }
+      .cta-strip { flex-direction: column; align-items: flex-start; padding: 48px 24px; }
+    }
+    @media (max-width: 640px) {
+      .page-hero { padding: 110px 20px 48px; }
+      .story-section { padding: 64px 0; }
+      .values-grid { grid-template-columns: 1fr; }
+      .licenses-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <span class="top">Fire Line Services</span>
+      <span class="bottom">Underground Utilities · DFW</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="services.html" class="mobile-nav-link">Services</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <a href="projects.html" class="mobile-nav-link">Projects</a>
+  <a href="contact.html" class="mobile-cta mobile-nav-link">Get in Touch</a>
+</div>
+
+<!-- ── PAGE HERO ── -->
+<div class="page-hero">
+  <div class="page-hero-eyebrow">Our Story</div>
+  <h1>Started in the Field.<br>Built on Trust.</h1>
+  <p>Fire Line Services has been under the ground — and behind the scenes — of DFW commercial construction since 1992. Here's how it started.</p>
+</div>
+
+<!-- ── STORY ── -->
+<section class="story-section">
+  <div class="section-inner">
+    <div class="story-grid">
+      <div class="story-body reveal">
+        <p><strong>Dwayne</strong> started Fire Line Services after the plumbing company he worked for closed its doors mid-job. Rather than walk away, he made the case to the GC — convinced him to write the contract and the check directly to him — and finished the work himself.</p>
+        <p>He took that first check and started Fire Line Services.</p>
+        <p>The company began with a single focus: installing fire lines and FDC connections for overhead sprinkler subs. As the industry evolved and GCs began expecting more from their utility subcontractors, Fire Line Services evolved with it — expanding into sewer, water, and storm to become a <strong>full-service underground utility contractor</strong>.</p>
+        <p>Today, with more than <strong>50 field crew members</strong> and projects across the DFW metroplex and beyond, that same founding instinct — show up, do the work, keep your word — is what drives us.</p>
+        <p>GCs keep calling us back because our crews move efficiently and we're strong on the relationship side. That's not marketing copy. It's what we've heard directly from the field for 30+ years.</p>
+      </div>
+      <div class="story-aside reveal">
+        <div class="stat-block">
+          <span class="stat-block-num">1992<span></span></span>
+          <span class="stat-block-label">Year Founded</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-block-num">30<span>+</span></span>
+          <span class="stat-block-label">Years of DFW Commercial Work</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-block-num">50<span>+</span></span>
+          <span class="stat-block-label">Field Crew Members</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-block-num">$<span>10M</span></span>
+          <span class="stat-block-label">Bonding Capacity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VALUES ── -->
+<section class="values-section">
+  <div class="section-inner">
+    <div class="section-label reveal">How We Work</div>
+    <h2 class="section-title reveal">What Sets<br>Us Apart</h2>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <span class="value-num">01</span>
+        <div class="value-title">Relationship-First</div>
+        <p class="value-desc">We invest in the GC relationship beyond the contract. Our subs have to be reachable, accountable, and easy to work with. That's the baseline — and we go further.</p>
+      </div>
+      <div class="value-card reveal">
+        <span class="value-num">02</span>
+        <div class="value-title">Field Efficiency</div>
+        <p class="value-desc">GCs consistently cite our crew pace and coordination as a differentiator. We move. We don't hold up the job. We're in and out clean.</p>
+      </div>
+      <div class="value-card reveal">
+        <span class="value-num">03</span>
+        <div class="value-title">Full Underground Scope</div>
+        <p class="value-desc">Sewer, water, storm, fire — plus repairs, backflow, and leak detection. One call, complete underground coverage for the life of the project.</p>
+      </div>
+      <div class="value-card reveal">
+        <span class="value-num">04</span>
+        <div class="value-title">Safety Culture</div>
+        <p class="value-desc">OSHA 10, 30, 510, 500 certifications. Confined Space and CPR trained across the team. Safety isn't a checkbox — it's how we protect our crews and our GC partners.</p>
+      </div>
+      <div class="value-card reveal">
+        <span class="value-num">05</span>
+        <div class="value-title">Commercial Experience</div>
+        <p class="value-desc">Warehouses, hospitals, hotels, schools, transit — we've worked all of it. Three decades of commercial underground work means we don't get surprised on the job.</p>
+      </div>
+      <div class="value-card reveal">
+        <span class="value-num">06</span>
+        <div class="value-title">Licensed & Bonded</div>
+        <p class="value-desc">RME U Licensed. $10M bonding capacity. Members of UCA TX and ASA. We come to the table with everything a GC needs to qualify us on day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LICENSES & CERTS ── -->
+<section class="licenses-section">
+  <div class="section-inner">
+    <div class="section-label reveal">Credentials</div>
+    <h2 class="section-title reveal">Licensed,<br>Bonded & Certified</h2>
+    <div class="licenses-grid">
+      <div class="license-item reveal">
+        <div class="license-title">License</div>
+        <div class="license-value">RME U</div>
+      </div>
+      <div class="license-item reveal">
+        <div class="license-title">Bonding Capacity</div>
+        <div class="license-value">$10M Total</div>
+      </div>
+      <div class="license-item reveal">
+        <div class="license-title">Associations</div>
+        <div class="license-value">UCA TX<br>ASA</div>
+      </div>
+      <div class="license-item reveal">
+        <div class="license-title">Safety Training</div>
+        <div class="license-value" style="font-size:16px; line-height:1.5;">OSHA 10 · 30 · 510 · 500<br>Confined Space · CPR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA STRIP ── -->
+<div class="cta-strip">
+  <div class="cta-strip-text">Let's Work Together.</div>
+  <a href="contact.html" class="btn-white">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    Get in Touch
+  </a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-copy">© 2025 Fire Line Services · Alvarado, TX · All Rights Reserved</div>
+  <div class="footer-assoc">
+    <span class="assoc-badge">UCA TX Member</span>
+    <span class="assoc-badge">ASA Member</span>
+  </div>
+  <div class="footer-license">RME U Licensed · Bonded $10M</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

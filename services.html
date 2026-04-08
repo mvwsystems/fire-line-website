@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Fire Line Services | DFW Underground Utilities</title>
+  <meta name="description" content="Underground utility services including sewer, water, storm drainage, fire line installation, repairs, backflow testing, and leak detection across DFW.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/styles.css">
+  <style>
+    /* ── PAGE HERO (interior pages) ── */
+    .page-hero {
+      position: relative;
+      padding: 160px 48px 80px;
+      background: var(--black-mid);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 72px;
+      width: 4px;
+      height: 100%;
+      background: var(--red);
+    }
+    .page-hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .page-hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--red);
+    }
+    .page-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 7vw, 100px);
+      line-height: 1;
+      letter-spacing: 0.03em;
+      color: var(--white-pure);
+      max-width: 700px;
+    }
+    .page-hero p {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--gray-light);
+      max-width: 540px;
+      margin-top: 20px;
+      line-height: 1.7;
+    }
+
+    /* ── SERVICE DETAIL CARDS ── */
+    .service-detail-section {
+      padding: 100px 0;
+      background: var(--black);
+    }
+    .service-detail-section:nth-child(even) {
+      background: var(--black-mid);
+    }
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .service-detail-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 80px;
+      line-height: 1;
+      color: rgba(255,255,255,0.04);
+      margin-bottom: -20px;
+    }
+    .service-detail-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+    .service-detail-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 4vw, 56px);
+      line-height: 1;
+      color: var(--white-pure);
+      margin-top: 8px;
+      margin-bottom: 24px;
+    }
+    .service-detail-body {
+      font-size: 16px;
+      font-weight: 300;
+      color: #B0AEAB;
+      line-height: 1.8;
+    }
+    .service-detail-body p + p { margin-top: 16px; }
+    .service-detail-list {
+      list-style: none;
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .service-detail-list li {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .service-detail-list li::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    /* ── CTA STRIP ── */
+    .cta-strip {
+      background: var(--red);
+      padding: 60px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .cta-strip-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      color: white;
+      line-height: 1;
+    }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: white;
+      padding: 16px 36px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      clip-path: polygon(0 0, 100% 0, 100% 70%, 93% 100%, 0 100%);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .btn-white:hover { background: var(--white); transform: translateY(-2px); }
+
+    @media (max-width: 1024px) {
+      .service-detail-grid { grid-template-columns: 1fr; gap: 32px; }
+      .service-detail-label { display: none; }
+      .page-hero { padding: 140px 24px 60px; }
+      .cta-strip { flex-direction: column; align-items: flex-start; padding: 48px 24px; }
+    }
+    @media (max-width: 640px) {
+      .page-hero { padding: 110px 20px 48px; }
+      .service-detail-section { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <span class="top">Fire Line Services</span>
+      <span class="bottom">Underground Utilities · DFW</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="services.html" class="mobile-nav-link">Services</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <a href="projects.html" class="mobile-nav-link">Projects</a>
+  <a href="contact.html" class="mobile-cta mobile-nav-link">Get in Touch</a>
+</div>
+
+<!-- ── PAGE HERO ── -->
+<div class="page-hero">
+  <div class="page-hero-eyebrow">What We Do</div>
+  <h1>Underground<br>Utility Services</h1>
+  <p>Full-scope commercial underground utility installation and repair across the DFW metroplex and surrounding regions. One sub. All four lines.</p>
+</div>
+
+<!-- ── SEWER ── -->
+<section class="service-detail-section">
+  <div class="section-inner">
+    <div class="service-detail-grid">
+      <div>
+        <div class="service-detail-label">01</div>
+        <div class="service-detail-num">Core Service</div>
+        <h2 class="service-detail-title">Sewer Installation</h2>
+      </div>
+      <div class="service-detail-body reveal">
+        <p>We install commercial gravity and pressure sewer systems for projects of all sizes — from tilt-wall warehouses and multi-family complexes to hospitals, hotels, and roadway infrastructure. Every install is built to local code and coordinated with the GC's schedule.</p>
+        <p>Our crews are experienced with tight utility corridors, congested job sites, and fast-track schedules. We get in, get it done, and get out.</p>
+        <ul class="service-detail-list">
+          <li>Gravity sewer mains and laterals</li>
+          <li>Pressure sewer force mains</li>
+          <li>Lift station coordination</li>
+          <li>New construction & retrofit installs</li>
+          <li>Commercial & institutional projects</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WATER ── -->
+<section class="service-detail-section">
+  <div class="section-inner">
+    <div class="service-detail-grid">
+      <div>
+        <div class="service-detail-label">02</div>
+        <div class="service-detail-num">Core Service</div>
+        <h2 class="service-detail-title">Water Line Install</h2>
+      </div>
+      <div class="service-detail-body reveal">
+        <p>Domestic and commercial water service installations for commercial pad sites, multi-family developments, and institutional campuses. We work with the jurisdiction and engineer to make sure every install is done right the first time.</p>
+        <ul class="service-detail-list">
+          <li>Domestic water service mains</li>
+          <li>Fire service water feeds</li>
+          <li>Meter set and connection work</li>
+          <li>New construction & replacement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STORM ── -->
+<section class="service-detail-section">
+  <div class="section-inner">
+    <div class="service-detail-grid">
+      <div>
+        <div class="service-detail-label">03</div>
+        <div class="service-detail-num">Core Service</div>
+        <h2 class="service-detail-title">Storm Drainage</h2>
+      </div>
+      <div class="service-detail-body reveal">
+        <p>Underground storm drainage systems engineered for high-volume commercial and infrastructure projects. From large-diameter RCP to detention tie-ins, we handle the full storm scope on complex commercial sites.</p>
+        <ul class="service-detail-list">
+          <li>Storm sewer mains and inlets</li>
+          <li>Large-diameter RCP installations</li>
+          <li>Detention pond outfall structures</li>
+          <li>Roadway and infrastructure drainage</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FIRE LINE ── -->
+<section class="service-detail-section">
+  <div class="section-inner">
+    <div class="service-detail-grid">
+      <div>
+        <div class="service-detail-label">04</div>
+        <div class="service-detail-num">Core Service — Where It All Started</div>
+        <h2 class="service-detail-title">Fire Line Install</h2>
+      </div>
+      <div class="service-detail-body reveal">
+        <p>Underground fire protection line installation is in our DNA. Since 1992, we've been installing fire lines and FDC connections for overhead sprinkler subs across the DFW metroplex. It's where Fire Line Services began — and still one of our strongest capabilities.</p>
+        <ul class="service-detail-list">
+          <li>Underground fire mains</li>
+          <li>FDC (Fire Department Connection) piping</li>
+          <li>Backflow preventer vaults</li>
+          <li>Fire hydrant leads and laterals</li>
+          <li>Post indicator valve (PIV) installations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ADDITIONAL SERVICES ── -->
+<section class="service-detail-section">
+  <div class="section-inner">
+    <div class="section-label reveal">Additional Capabilities</div>
+    <h2 class="section-title reveal" style="margin-bottom:48px;">More Than<br>Installation</h2>
+    <div class="services-secondary">
+      <div class="service-card-sm reveal">
+        <div class="service-card-sm-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        </div>
+        <div>
+          <div class="service-card-sm-name">Underground Fire Repair</div>
+          <div class="service-card-sm-desc">Locating, excavating, and repairing underground fire suppression line failures — including emergency response.</div>
+        </div>
+      </div>
+      <div class="service-card-sm reveal">
+        <div class="service-card-sm-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21H5.71c.98-2.42 2.2-4.41 3.48-5.96C12 19.77 12 22 12 22s4-2 4-8V9l3 3V8l-2-2V4.5L12 3 9 4.5V6L7 8h10z"/></svg>
+        </div>
+        <div>
+          <div class="service-card-sm-name">Backflow Testing</div>
+          <div class="service-card-sm-desc">Certified backflow prevention device testing for commercial systems. Keeps you compliant and protected.</div>
+        </div>
+      </div>
+      <div class="service-card-sm reveal">
+        <div class="service-card-sm-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        </div>
+        <div>
+          <div class="service-card-sm-name">Leak Detection & Repair</div>
+          <div class="service-card-sm-desc">Find and fix underground water and utility line leaks with minimal surface disruption.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA STRIP ── -->
+<div class="cta-strip">
+  <div class="cta-strip-text">Ready to Talk About Your Project?</div>
+  <a href="contact.html" class="btn-white">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    Get in Touch
+  </a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-copy">© 2025 Fire Line Services · Alvarado, TX · All Rights Reserved</div>
+  <div class="footer-assoc">
+    <span class="assoc-badge">UCA TX Member</span>
+    <span class="assoc-badge">ASA Member</span>
+  </div>
+  <div class="footer-license">RME U Licensed · Bonded $10M</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

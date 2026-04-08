@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Fire Line Services | DFW Underground Utilities</title>
+  <meta name="description" content="Notable completed projects by Fire Line Services — Omni PGA Frisco Resort, The Quinn, DART Orange Line, VA Dallas, and more across DFW and surrounding regions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/styles.css">
+  <style>
+    .page-hero {
+      position: relative;
+      padding: 160px 48px 80px;
+      background: var(--black-mid);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 72px;
+      width: 4px;
+      height: 100%;
+      background: var(--red);
+    }
+    .page-hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .page-hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--red);
+    }
+    .page-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 7vw, 100px);
+      line-height: 1;
+      letter-spacing: 0.03em;
+      color: var(--white-pure);
+      max-width: 700px;
+    }
+    .page-hero p {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--gray-light);
+      max-width: 540px;
+      margin-top: 20px;
+      line-height: 1.7;
+    }
+
+    /* ── PROJECTS FULL PAGE ── */
+    .projects-full {
+      padding: 100px 0;
+      background: var(--black);
+    }
+
+    /* ── NOTABLE LIST ── */
+    .notable-section {
+      padding: 80px 0;
+      background: var(--black-mid);
+    }
+
+    .notable-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+
+    .notable-item {
+      background: var(--black-light);
+      padding: 28px 32px;
+      border-left: 3px solid transparent;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .notable-item:hover {
+      border-left-color: var(--red);
+      background: #1a1a1a;
+    }
+
+    .notable-item-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white-pure);
+      margin-bottom: 4px;
+    }
+
+    .notable-item-location {
+      font-size: 13px;
+      color: var(--gray-light);
+    }
+
+    /* ── MARKETS SERVED ── */
+    .cta-strip {
+      background: var(--red);
+      padding: 60px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .cta-strip-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      color: white;
+      line-height: 1;
+    }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: white;
+      padding: 16px 36px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      clip-path: polygon(0 0, 100% 0, 100% 70%, 93% 100%, 0 100%);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .btn-white:hover { background: var(--white); transform: translateY(-2px); }
+
+    @media (max-width: 1024px) {
+      .page-hero { padding: 140px 24px 60px; }
+      .notable-list { grid-template-columns: 1fr 1fr; }
+      .cta-strip { flex-direction: column; align-items: flex-start; padding: 48px 24px; }
+    }
+    @media (max-width: 640px) {
+      .page-hero { padding: 110px 20px 48px; }
+      .projects-full, .notable-section { padding: 64px 0; }
+      .notable-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <span class="top">Fire Line Services</span>
+      <span class="bottom">Underground Utilities · DFW</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="services.html" class="mobile-nav-link">Services</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <a href="projects.html" class="mobile-nav-link">Projects</a>
+  <a href="contact.html" class="mobile-cta mobile-nav-link">Get in Touch</a>
+</div>
+
+<!-- ── PAGE HERO ── -->
+<div class="page-hero">
+  <div class="page-hero-eyebrow">Track Record</div>
+  <h1>Projects We're<br>Proud Of</h1>
+  <p>From resort hotels and VA hospitals to transit infrastructure and major warehouse parks — Fire Line Services has been underground on some of DFW's most significant commercial builds.</p>
+</div>
+
+<!-- ── PROJECTS GRID ── -->
+<section class="projects-full">
+  <div class="section-inner">
+    <div class="projects-grid">
+      <!-- FEATURED -->
+      <div class="project-card large reveal">
+        <div class="project-bg" style="background: linear-gradient(135deg, #2a1010 0%, #0f0f0f 100%);"></div>
+        <div class="proj-placeholder">
+          <svg viewBox="0 0 24 24" fill="white"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+        </div>
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <div class="project-type">Hotel & Villas — Frisco, TX</div>
+          <div class="project-name">Omni PGA Frisco Resort</div>
+          <div class="project-location">4451 Rockhill Pkwy, Frisco TX</div>
+          <div class="project-services-tags">
+            <span class="tag">Sewer</span><span class="tag">Water</span><span class="tag">Storm</span><span class="tag">Fire</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-bg" style="background: linear-gradient(135deg, #101a2a 0%, #0f0f0f 100%);"></div>
+        <div class="proj-placeholder"><svg viewBox="0 0 24 24" fill="white"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <div class="project-type">Multi-Family — Anna, TX</div>
+          <div class="project-name">The Quinn</div>
+          <div class="project-location">125 S Standridge Blvd, Anna TX</div>
+          <div class="project-services-tags">
+            <span class="tag">Sewer</span><span class="tag">Water</span><span class="tag">Storm</span><span class="tag">Fire</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-bg" style="background: linear-gradient(135deg, #1a1a10 0%, #0f0f0f 100%);"></div>
+        <div class="proj-placeholder"><svg viewBox="0 0 24 24" fill="white"><path d="M19 3H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <div class="project-type">Warehouse — Wilmer, TX</div>
+          <div class="project-name">Sunridge Stonemont</div>
+          <div class="project-location">200 Sunridge Blvd, Wilmer TX</div>
+          <div class="project-services-tags">
+            <span class="tag">Water</span><span class="tag">Storm</span><span class="tag">Sewer</span><span class="tag">Fire</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-bg" style="background: linear-gradient(135deg, #101a10 0%, #0f0f0f 100%);"></div>
+        <div class="proj-placeholder"><svg viewBox="0 0 24 24" fill="white"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div>
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <div class="project-type">Warehouse — Flower Mound, TX</div>
+          <div class="project-name">Lakeside Ranch</div>
+          <div class="project-location">500 & 600 Gerault Rd, Flower Mound TX</div>
+          <div class="project-services-tags">
+            <span class="tag">Storm</span><span class="tag">Sewer</span><span class="tag">Water</span><span class="tag">Fire</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-bg" style="background: linear-gradient(135deg, #1a1010 0%, #0f0f0f 100%);"></div>
+        <div class="proj-placeholder"><svg viewBox="0 0 24 24" fill="white"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <div class="project-type">Transit Infrastructure — Irving, TX</div>
+          <div class="project-name">DART Orange Line</div>
+          <div class="project-location">Irving, TX</div>
+          <div class="project-services-tags">
+            <span class="tag">Infrastructure</span><span class="tag">Underground Utilities</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-bg" style="background: linear-gradient(135deg, #10181a 0%, #0f0f0f 100%);"></div>
+        <div class="proj-placeholder"><svg viewBox="0 0 24 24" fill="white"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg></div>
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <div class="project-type">Healthcare — Dallas, TX</div>
+          <div class="project-name">VA Hospital Dallas</div>
+          <div class="project-location">Dallas, TX</div>
+          <div class="project-services-tags">
+            <span class="tag">Sewer</span><span class="tag">Water</span><span class="tag">Storm</span><span class="tag">Fire</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MARKETS ── -->
+<section class="markets" style="padding-top:100px; padding-bottom:100px;">
+  <div class="section-inner">
+    <div class="section-label reveal">Markets We Serve</div>
+    <h2 class="section-title reveal">Commercial.<br>At Scale.</h2>
+    <div class="markets-list">
+      <div class="market-item reveal">
+        <span class="market-icon">🏭</span>
+        <div class="market-name">Warehouse & Tilt-Wall</div>
+        <div class="market-desc">Industrial and logistics facilities across DFW. High-volume, fast-schedule work.</div>
+      </div>
+      <div class="market-item reveal">
+        <span class="market-icon">🏠</span>
+        <div class="market-name">Multi-Family</div>
+        <div class="market-desc">Apartment and mixed-use residential requiring full underground scope.</div>
+      </div>
+      <div class="market-item reveal">
+        <span class="market-icon">🏥</span>
+        <div class="market-name">Healthcare & Institutional</div>
+        <div class="market-desc">Hospitals, VA facilities, and schools. Code-critical work done right.</div>
+      </div>
+      <div class="market-item reveal">
+        <span class="market-icon">🛣️</span>
+        <div class="market-name">Infrastructure</div>
+        <div class="market-desc">Public infrastructure, transit, and roadway utility installations.</div>
+      </div>
+      <div class="market-item reveal">
+        <span class="market-icon">🏨</span>
+        <div class="market-name">Hospitality</div>
+        <div class="market-desc">High-profile resort and hotel developments like the Omni PGA Frisco.</div>
+      </div>
+      <div class="market-item reveal">
+        <span class="market-icon">🛍️</span>
+        <div class="market-name">Retail & Mixed-Use</div>
+        <div class="market-desc">Commercial pad sites and retail developments.</div>
+      </div>
+      <div class="market-item reveal">
+        <span class="market-icon">🎓</span>
+        <div class="market-name">Education</div>
+        <div class="market-desc">K-12, colleges, and campus infrastructure.</div>
+      </div>
+      <div class="market-item reveal">
+        <span class="market-icon">⚙️</span>
+        <div class="market-name">Industrial & Manufacturing</div>
+        <div class="market-desc">Steel mills, manufacturing additions, and heavy commercial — like Gerdau/Chaparral Steel.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NOTABLE CLIENTS ── -->
+<section class="notable-section">
+  <div class="section-inner">
+    <div class="section-label reveal">Also Notable</div>
+    <h2 class="section-title reveal">More Work<br>We're Proud Of</h2>
+    <div class="notable-list">
+      <div class="notable-item reveal">
+        <div class="notable-item-name">West Park 1-A</div>
+        <div class="notable-item-location">DFW Metroplex</div>
+      </div>
+      <div class="notable-item reveal">
+        <div class="notable-item-name">West Park 1-B</div>
+        <div class="notable-item-location">DFW Metroplex</div>
+      </div>
+      <div class="notable-item reveal">
+        <div class="notable-item-name">Public Ref Warehouse</div>
+        <div class="notable-item-location">Denton, TX</div>
+      </div>
+      <div class="notable-item reveal">
+        <div class="notable-item-name">Gerdau Addition</div>
+        <div class="notable-item-location">Chaparral Steel — Midlothian, TX</div>
+      </div>
+      <div class="notable-item reveal">
+        <div class="notable-item-name">Razer Ranch</div>
+        <div class="notable-item-location">DFW Metroplex</div>
+      </div>
+      <div class="notable-item reveal">
+        <div class="notable-item-name">PGA Frisco HQ</div>
+        <div class="notable-item-location">Frisco, TX</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA STRIP ── -->
+<div class="cta-strip">
+  <div class="cta-strip-text">Your Project Next.</div>
+  <a href="contact.html" class="btn-white">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    Get in Touch
+  </a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-copy">© 2025 Fire Line Services · Alvarado, TX · All Rights Reserved</div>
+  <div class="footer-assoc">
+    <span class="assoc-badge">UCA TX Member</span>
+    <span class="assoc-badge">ASA Member</span>
+  </div>
+  <div class="footer-license">RME U Licensed · Bonded $10M</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
