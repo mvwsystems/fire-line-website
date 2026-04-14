@@ -227,14 +227,16 @@ nav {
 .hero-bg {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
-    linear-gradient(to right, rgba(10,10,10,0.97) 45%, rgba(10,10,10,0.6) 100%),
-    linear-gradient(160deg, #1a0000 0%, #0a0a0a 60%);
+    linear-gradient(to right, rgba(10,10,10,0.82) 40%, rgba(10,10,10,0.45) 100%),
+    linear-gradient(160deg, rgba(26,0,0,0.6) 0%, rgba(10,10,10,0.4) 60%);
 }
 
 .hero-grid {
   position: absolute;
   inset: 0;
+  z-index: 2;
   background-image:
     linear-gradient(rgba(204,26,26,0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(204,26,26,0.06) 1px, transparent 1px);
@@ -248,6 +250,7 @@ nav {
   right: 0;
   width: 55%;
   height: 100%;
+  z-index: 2;
   background: linear-gradient(135deg, rgba(204,26,26,0.08) 0%, transparent 60%);
 }
 
@@ -255,6 +258,7 @@ nav {
   position: absolute;
   left: 0;
   top: 72px;
+  z-index: 2;
   width: 4px;
   height: 0;
   background: var(--red);
