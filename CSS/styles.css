@@ -1019,9 +1019,11 @@ section { position: relative; }
 }
 
 .market-icon {
-  font-size: 28px;
+  width: 36px;
+  height: 36px;
   margin-bottom: 16px;
   display: block;
+  color: var(--red);
 }
 
 .market-name {
