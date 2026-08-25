@@ -1,7 +1,7 @@
 # Fire Line Services — Website
 
 **Client:** Fire Line Services  
-**Built by:** Titan AI / Matt Vincent Walker  
+**Powered by:** [6 SIGNAL](https://6signal.co/) / Matt Vincent Walker  
 **Stack:** Plain HTML, CSS, Vanilla JS — no frameworks, no build step  
 **Hosting:** Netlify (static)
 

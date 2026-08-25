@@ -1,6 +1,6 @@
 /* ============================================================
    Fire Line Services — Main JavaScript
-   Author: Titan AI / Matt Vincent Walker
+   Author: 6 SIGNAL (https://6signal.co/) / Matt Vincent Walker
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
